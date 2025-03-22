@@ -20,7 +20,7 @@ export default function Home() {
           <div className="mt-15">
             <Button
               name="Get Started"
-              color="bg-[linear-gradient(90deg,rgba(174,89,195,0.5),rgba(109,236,205,0.5),rgba(219,255,0,0.5))]"
+              color="bg-[linear-gradient(90deg,rgba(174,89,195,0.5),rgba(109,236,205,0.5),rgba(219,255,0,0.5))] outline-2  outline-offset-2  outline-white border-none shadow-xl"
             />
           </div>
         </div>
@@ -34,9 +34,6 @@ export default function Home() {
 
           {/* Polygon Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm" />
-
-          {/* 3D Scene */}
-          <div className="relative z-10 w-full h-full"></div>
         </div>
       </div>
     </div>
