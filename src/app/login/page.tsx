@@ -215,6 +215,18 @@ const Page = () => {
                 </Form>
               )}
             </Formik>
+            <div className="inline-flex items-center justify-center w-full">
+              <hr className="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+              <span className="absolute px-3 font-medium text-gray-900  bg-white">
+                or
+              </span>
+            </div>
+            <Link
+              href="/signup"
+              className="flex justify-center text-sm text-black hover:underline hover:text-blue-600"
+            >
+              Sign up
+            </Link>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { SignupContext } from "../context/SignupContext";
 import { useFormik } from "formik";
 import { step3Validation } from "../utils/validations";
+import { useRouter } from "next/navigation";
 
 const Step3 = () => {
   const signupCtx = useContext(SignupContext);
@@ -11,6 +12,7 @@ const Step3 = () => {
     throw new Error("SignupContext must be used within SignupProvider");
 
   const { formData, setFormData, setStep } = signupCtx;
+  const router = useRouter();
 
   const formik = useFormik({
     initialValues: {
@@ -33,6 +35,7 @@ const Step3 = () => {
           2
         )}`
       );
+      router.push("/login");
       //   setStep(4);
     },
   });
