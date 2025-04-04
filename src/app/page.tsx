@@ -1,8 +1,14 @@
+"use client";
 import Button from "@/components/layout/Button";
 import Ellipse from "@/components/layout/Ellipse";
 import Navbar from "@/components/layout/Navbar";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const handleSubmit = () => {
+    router.push("/login");
+  };
   return (
     <div>
       <Navbar />
@@ -19,6 +25,7 @@ export default function Home() {
           </p>
           <div className="mt-15">
             <Button
+              onClick={handleSubmit}
               name="Get Started"
               color="bg-[linear-gradient(90deg,rgba(174,89,195,0.5),rgba(109,236,205,0.5),rgba(219,255,0,0.5))] outline-2  outline-offset-2  outline-white border-none shadow-xl"
             />

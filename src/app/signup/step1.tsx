@@ -55,7 +55,7 @@ function Step1() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.username}
-              className="w-full p-2 border rounded"
+              className="w-full p-2  rounded-lg bg-gray-200"
               placeholder="hmd123"
             />
             {formik.touched.username && formik.errors.username && (

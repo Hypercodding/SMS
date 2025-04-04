@@ -3,9 +3,12 @@
 import Link from "next/link";
 import Button from "./Button";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const path = usePathname();
+  console.log("path", path);
+  // const homePath =
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -29,37 +32,41 @@ const Navbar = () => {
           </div>
 
           {/* Center: Navigation Links */}
-          <div className="hidden md:flex flex-1 justify-center space-x-8">
-            <Link
-              href="/dashboard"
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/students"
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Students
-            </Link>
-            <Link
-              href="/teachers"
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Teachers
-            </Link>
-          </div>
+          {path === "/" || (
+            <div className="hidden md:flex flex-1 justify-center space-x-8">
+              <Link
+                href="/dashboard"
+                className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/students"
+                className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Students
+              </Link>
+              <Link
+                href="/teachers"
+                className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Teachers
+              </Link>
+            </div>
+          )}
 
           {/* Right: Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button name="Login" onClick={handleLoginClick} />
-            <Button
-              name="Signup"
-              color="bg-[#1D2731]"
-              textColor="text-white"
-              onClick={handleButtonClick}
-            />
-          </div>
+          {path === "/" && (
+            <div className="hidden md:flex items-center space-x-4">
+              <Button name="Login" onClick={handleLoginClick} />
+              <Button
+                name="Signup"
+                color="bg-[#1D2731]"
+                textColor="text-white"
+                onClick={handleButtonClick}
+              />
+            </div>
+          )}
 
           {/* Mobile menu button */}
           <div className="md:hidden">

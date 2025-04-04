@@ -39,7 +39,7 @@ export default function Page() {
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
           {step === 3 && <Step3 />}
-          {step === 3 && <Step4 />}
+          {step === 4 && <Step4 />}
         </div>
       </div>
     </div>
